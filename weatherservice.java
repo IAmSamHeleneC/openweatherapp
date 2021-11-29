@@ -16,4 +16,15 @@ public Response getForecast(String zipCode) {
     RestTemplate restTemplate = new RestTemplate();
     return restTemplate.getForObject(url, Response.class);
 }
+//added last remaining piece//    
+    } catch (HttpClientErrorException ex) {
+            Response response = new Response();
+            response.setName("error");
+            return response;
+        }
+    }
+
+    // public Request getTopTen(String zipCode) {
+    // }
+}
 }
